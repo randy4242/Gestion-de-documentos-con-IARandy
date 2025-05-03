@@ -66,30 +66,36 @@ body {
 }
 
 .contenido {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
-    max-width: 650px; /* Limita el ancho total del contenedor */
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
+
 
 
 .boton {
     display: flex;
-    flex-direction: column; /* Acomoda el contenido en columna */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background: #666;
     color: white;
-    font-size: 30px;
-    padding: 50px;
-    width: 600px;
-    margin: 100px auto;
+    font-size: 24px;
+    padding: 50px 150px;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 40px;
     border-radius: 10px;
     border: 5px solid black;
     cursor: pointer;
     text-align: center;
+    box-sizing: border-box;
 }
+
 
 .boton span {
     position: relative;

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Completar Perfil</title>
+    <link rel="stylesheet" href="CSS/perfilavatar.css">
+    <link rel="stylesheet" href="CSS/perfil.css">
+    <link rel="stylesheet" href="CSS/menu.css">
+</head>
+<body>
+
+    <!-- Menú lateral -->
+    <div id="menuContainer"></div>
+
+    <!-- Contenedor del perfil (esquina superior derecha) -->
+<div id="profile-container">
+    <img id="profile-avatar" src="imagenes/default-avatar.png" alt="Avatar" />
+    <span id="profile-name">Nombre de Usuario</span>
+    <button id="logout-button">Cerrar sesión</button>
+</div>
+
+
+    <form id="profile-form">
+        <h1>Completar Perfil</h1>
+
+        <!-- input Nombre -->
+        <label for="nombre">Nombre</label>
+        <div class="form-input">
+            <input type="text" placeholder="Ingresa tu nombre" required id="nombre">
+        </div>
+
+        <!-- input Avatar -->
+        <label for="avatar_file">Subir avatar:</label>
+        <div class="form-input">
+            <input type="file" id="avatar_file" accept="image/*">
+        </div>
+
+
+        <!-- Botón de enviar -->
+        <div class="form-input">
+            <button type="submit">Guardar Perfil</button>
+        </div>
+    </form>
+    <script type="module" src="js/perfil.js"></script>
+    <script type="module" src="js/supabase.js"></script>
+    <script type="module" src="js/script.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Clasificaciones</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="CSS/clasificaciones.css">
+  <link rel="stylesheet" href="CSS/perfilavatar.css">
+  <link rel="stylesheet" href="CSS/estiloprimera.css">
+</head>
+
+<body>
+
+  <!-- Menú hamburguesa -->
+  <div id="menuContainer"></div>
+
+  <!-- Perfil del usuario -->
+  <div id="contenedor-avatar" style="margin-left: 80px; margin-top: 10px;">
+    <!-- El perfil se carga dinámicamente -->
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="clasificaciones-container">
+    <div class="header-clasificaciones">
+      <h1>Mis Clasificaciones</h1>
+      <a href="tercera.html" class="btn-nuevo-doc">
+        <span>+</span> Nuevo Documento
+      </a>
+    </div>
+
+    <div id="lista-clasificaciones" class="grid-clasificaciones">
+      <!-- Aquí aparecerán dinámicamente las clasificaciones -->
+    </div>
+
+    <div id="contenedor-documentos" class="documentos-container" style="display: none;">
+      <h2 id="titulo-clasificacion">Documentos en <span id="nombre-clasificacion-activa">Nombre</span></h2>
+      <ul id="lista-documentos">
+        <!-- Documentos dinámicos -->
+      </ul>
+      <button id="btn-volver" class="btn-volver">← Volver a clasificaciones</button>
+    </div>
+
+    <div id="mensaje-vacio" class="mensaje-vacio">
+      <img src="imagenes/carpeta-vacia.png" alt="Sin clasificaciones" style="width: 200px;">
+      <p>No has creado ninguna clasificación</p>
+      <a href="tercera.html" class="btn-primera">Crear Clasificación</a>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="js/script.js"></script> <!-- 🧠 Carga menú hamburguesa -->
+  <script type="module" src="js/clasificaciones.js"></script>
+  <script type="module" src="js/cargarperfil.js"></script>
+ 
+
+
+</body>
+</html>

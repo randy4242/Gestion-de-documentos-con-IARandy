@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buscar Documentos</title>
+  <link rel="stylesheet" href="CSS/buscardocumentos.css" />
+  <link rel="stylesheet" href="CSS/perfilavatar.css">
+  <link rel="stylesheet" href="CSS/estiloprimera.css">
+</head>
+<body>
+<!-- Menú lateral -->
+<div id="menuContainer"></div>
+
+ <!-- Perfil del usuario -->
+ <div id="contenedor-avatar"></div>
+
+  <div class="contenedor-busqueda">
+    <h2>Buscar Documentos</h2>
+    
+    <div class="filtros">
+      <input type="text" id="input-busqueda" placeholder="Buscar por palabra clave..." />
+      <select id="select-tipo">
+        <option value="">Todos los tipos</option>
+        <option value="Financiero">Financiero</option>
+        <option value="Inventario">Inventario</option>
+        <option value="Reuniones">Reuniones</option>
+        <option value="Contrato">Contrato</option>
+        <option value="Otros">Otros</option>
+      </select>
+      <select id="orden-fecha">
+        <option value="desc">Más recientes</option>
+        <option value="asc">Más antiguos</option>
+      </select>
+      <!-- ... -->
+<button id="btn-buscar">Buscar</button>
+<button id="btn-limpiar" class="btn-limpiar">Limpiar filtros</button>
+<!-- ... -->
+
+    </div>
+
+    <p id="cantidad-resultados"></p>
+    <ul id="lista-documentos"></ul>
+  </div>
+  <script type="module" src="js/cargarperfil.js"></script>
+  <script type="module" src="js/buscardocumentos.js"></script>
+  <script type="module" src="js/perfil.js"></script>
+  <script type="module" src="js/script.js"></script>
+</body>
+</html>

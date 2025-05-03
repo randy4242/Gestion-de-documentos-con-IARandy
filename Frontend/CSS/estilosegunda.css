@@ -1,0 +1,251 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background: #777;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+/* Ajuste si el menú está abierto */
+body.menu-abierto {
+    padding-left: 80px; /* 💥 Solo cuando el menú esté abierto */
+    transition: padding-left 0.3s ease;
+}
+
+/* Estilo del menú */
+#menuContainer {
+    width: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: transparent;
+    z-index: 1000;
+}
+
+/* Contenedor principal */
+.container {
+    background: #A9A9A9;
+    padding: 20px;
+    border-radius: 10px;
+    width: 690px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    border: 3px solid black;
+    margin-top: 40px;
+}
+
+/* Títulos */
+h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+/* Vista previa */
+.preview-section {
+    text-align: center;
+}
+
+.preview-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background: black;
+    border-radius: 10px;
+    border: 5px solid white;
+    margin: 0 auto;
+    padding: 10px;
+    overflow: hidden; /* 👈 Importante para que no se salga */
+    position: relative;
+}
+
+/* 🔥 Estilos para cualquier elemento dentro de la preview */
+.preview-box canvas,
+.preview-box img,
+.preview-box p,
+.preview-box pre,
+.preview-box div {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ajustar bien */
+}
+
+
+.preview-box img {
+    width: 100%;
+    height: auto;
+}
+
+.preview-placeholder {
+    color: white;
+}
+/* Formulario */
+.form-section {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    width: 400px;
+    margin: 50px auto 0 auto;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+input, select {
+    background: black;
+    color: white;
+    border: 5px solid white;
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+/* Botones clasificación */
+.botones-clasificacion {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.botones-clasificacion button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botones-clasificacion button:hover {
+    background-color: #2980b9;
+}
+
+/* Botón subir */
+#btnSubir {
+    margin-top: 15px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#btnSubir:hover {
+    background-color: #27ae60;
+}
+
+/* Resumen */
+.summary-section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.summary-box {
+    background: black;
+    width: 450px;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: 5px solid white;
+    margin: 10px auto 0 auto;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-contenido {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Iconos */
+.iconos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.icono {
+    font-size: 30px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.icono:hover, .icono.seleccionado {
+    border-color: #3498db;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+}
+
+/* Modal agregar clasificación */
+#modalAgregarClasificacion .modal-contenido {
+    width: 320px;
+    text-align: center;
+}
+
+/* Mensaje sin clasificaciones */
+#mensajeSinClasificacion {
+    margin-top: 15px;
+}
+
+/* Clasificaciones ítems */
+.clasificacion-item {
+    background-color: #f2f2f2;
+    padding: 10px 15px;
+    margin: 8px 0;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.clasificacion-item:hover {
+    background-color: #e0e0e0;
+    transform: translateX(5px);
+    cursor: pointer;
+}

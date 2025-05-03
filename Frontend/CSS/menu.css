@@ -1,0 +1,74 @@
+/* Menú lateral flotante */
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100%;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 1000; /* 🔥 Se queda encima */
+    transition: width 0.3s ease;
+}
+
+/* Botón hamburguesa */
+.hamburguesa {
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+/* Lista del menú */
+.menu-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.menu-lista li {
+    width: 100%;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.menu-lista li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 8px 0;
+    transition: background-color 0.3s;
+}
+
+.menu-lista li a:hover {
+    background-color: #555;
+}
+
+/* Títulos en el menú */
+.menu-titulo {
+    color: #bbb;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Efecto de expandir menú (opcional) */
+.menu-lateral.active {
+    width: 200px;
+}
+
+.menu-lateral.active .menu-lista li a {
+    text-align: left;
+    padding-left: 20px;
+}
+
+/* Si quieres animar todo el menú */
+.menu-lateral,
+.menu-lateral * {
+    transition: all 0.3s ease;
+}

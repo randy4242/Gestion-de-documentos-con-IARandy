@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Subir Documento</title>
+  
+  <!-- Librerías externas -->
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2.1.1/dist/tesseract.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="CSS/estilosegunda.css">
+  <link rel="stylesheet" href="CSS/perfilavatar.css">
+  <link rel="stylesheet" href="CSS/estiloprimera.css">
+
+  
+</head>
+
+<body>
+
+  <!-- Menú hamburguesa -->
+  <div id="menuContainer"></div>
+
+  <!-- Perfil -->
+  <div id="contenedor-avatar" style="margin-left: 80px; margin-top: 10px;"></div>
+
+  <!-- Contenedor principal -->
+  <div class="container">
+    <h3>Subir Documento</h3>
+
+    <!-- Vista previa -->
+    <div class="preview-section">
+      <div class="preview-box">
+        <p class="preview-placeholder">Aquí se cargará la vista previa del documento.</p>
+      </div>
+    </div>
+
+    <!-- Formulario -->
+    <div class="form-section">
+      <label for="fileInput">Seleccionar archivo</label>
+      <input type="file" id="fileInput">
+
+      <label for="file-name">Nombre del archivo</label>
+      <input type="text" id="file-name" placeholder="Escribe el nombre">
+
+      <label for="file-format">Formato del documento</label>
+      <select id="file-format">
+        <option value="PDF">PDF</option>
+        <option value="DOCX">Word</option>
+        <option value="TXT">Texto Plano</option>
+      </select>
+
+      <!-- Botones -->
+      <div class="botones-clasificacion">
+        <button id="btnCrearClasificacion">+ Crear Clasificación</button>
+        <button id="btnAgregarClasificacion">📂 Agregar a Clasificación</button>
+      </div>
+
+      <div id="clasificacion-activa" style="margin-top: 15px; font-weight: bold; color: white;">
+        No hay clasificación seleccionada
+      </div>
+
+      <button id="btnSubir">Subir Documento</button>
+    </div>
+
+    <!-- Resumen -->
+    <div class="summary-section">
+      <h3>Resumen Generado</h3>
+      <div class="summary-box">
+        <p id="summary-text">Aquí aparecerá el resumen del documento.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Crear clasificación -->
+  <div id="modalClasificacion" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar">&times;</span>
+      <h3>Crear Nueva Clasificación</h3>
+      <input type="text" id="nombre-clasificacion" placeholder="Nombre de la clasificación">
+
+      <h4>Selecciona un icono</h4>
+      <div class="iconos-container">
+        <div class="icono">📄</div>
+        <div class="icono">📝</div>
+        <div class="icono">📊</div>
+        <div class="icono">💼</div>
+        <div class="icono">📚</div>
+      </div>
+
+      <button id="btnGuardarClasificacion">Guardar Clasificación</button>
+    </div>
+  </div>
+
+  <!-- Modal: Agregar a clasificación -->
+  <div id="modalAgregarClasificacion" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar">&times;</span>
+      <h3>Seleccionar Clasificación</h3>
+      <div id="contenedor-clasificaciones"></div>
+      <div id="mensajeSinClasificacion" style="display:none; color: red;">
+        No hay clasificaciones disponibles.
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+  <script type="module" src="js/supabase.js"></script>
+  <script type="module" src="js/primera.js"></script>
+  <script type="module" src="js/modal.js"></script>
+  <script type="module" src="js/custom_tercera.js"></script>
+  <script type="module" src="js/cargarperfil.js"></script>
+  <script type="module" src="js/perfil.js"></script>
+
+
+  
+
+  <!-- ✅ Cargar el preview correctamente -->
+  <script type="module" src="js/preview.js"></script>
+
+
+
+  <!-- Activar la vista previa -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const fileInput = document.getElementById('fileInput');
+      if (fileInput) {
+        fileInput.addEventListener('change', async function () {
+          const file = this.files[0];
+          if (file && typeof mostrarVistaPrevia === "function") {
+            await mostrarVistaPrevia(file);
+          } else {
+            console.error("La función mostrarVistaPrevia no está disponible.");
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

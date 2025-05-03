@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="CSS/register.css">
+</head>
+<body>
+    <form action="" id="register-form">
+        <h1>Registro</h1>
+
+        <!-- input Nombre -->
+        <label for="nombre">Nombre</label>
+        <div class="form-input">
+            <input type="text" id="nombre" placeholder="Ingresa tu nombre" required id="nombre">
+        </div>
+
+        <!-- input Correo -->
+        <label for="email">Email</label>
+        <div class="form-input">
+            <input type="email" id="email" placeholder="ejemploemail123@gmail.com" required id="email">
+        </div>
+        
+        <!-- input Contraseña -->
+        <label for="contraseña">Contraseña</label>
+        <div class="form-input">
+            <input type="password" id="password" placeholder="**********" required id="contraseña">
+        </div>
+
+        <!-- input Confirmar Contraseña -->
+        <label for="confirmar-contraseña">Confirmar Contraseña</label>
+        <div class="form-input">
+            <input type="password" id="confirm-password" placeholder="**********" required id="confirmar-contraseña">
+        </div>
+
+        <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesion aquí</a></p>
+
+        <!-- Botón de enviar -->
+        <div class="form-input">
+            <button type="submit">Registrarse</button>
+
+            <p><a href="recuperarcontrsena.html">¿Olvidaste tu contraseña?</a></p>
+
+        </div>
+    </form>
+
+    <script type="module" src="js/supabase.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    
+
+</body>
+</html>

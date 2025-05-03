@@ -1,0 +1,60 @@
+body {
+  color: white;
+  margin: 0;
+  font-family: sans-serif;
+  background: linear-gradient(to right, rgb(22, 22, 22), rgb(79, 79, 79));
+}
+
+h1 {
+  text-align: center;
+  font-size: 22px;
+  text-shadow: 1.2px 1.2px 1.1px black;
+}
+
+form {
+  width: 60%;
+  background-color: rgb(104, 103, 103);
+  margin: auto;
+  padding: 21px;
+  margin-top: 40px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px 0px black;
+}
+
+.form-input {
+  margin-bottom: 20px;
+  margin-top: 8px;
+}
+
+input {
+  color: white;
+  width: 100%;
+  padding: 15px;
+  border: 1.8px solid rgb(191, 191, 191);
+  background: rgb(64, 64, 64);
+  border-radius: 8px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  box-sizing: border-box;
+}
+
+button {
+  width: 40%;
+  display: block; /* Hace que el botón sea un elemento de bloque */
+  margin: auto; /* Centra el botón horizontalmente */
+  padding: 10px;
+  background-color: rgb(71, 71, 71);
+  color: white;
+  border: 1.8px solid rgb(191, 191, 191);
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: rgb(128, 128, 128);
+}
+
+a {
+  color: rgb(176, 218, 255);
+}

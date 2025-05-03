@@ -1,0 +1,161 @@
+/* Fondo general */
+body {
+    background: linear-gradient(to right, rgb(22, 22, 22), rgb(79, 79, 79));
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Contenedor principal */
+  .clasificaciones-container {
+    padding: 20px;
+    margin-left: 70px; /* Dejar espacio para el menú hamburguesa */
+  }
+  
+  /* Encabezado */
+  .header-clasificaciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .header-clasificaciones h1 {
+    font-size: 26px;
+    text-shadow: 1.2px 1.2px 1.1px black;
+  }
+  
+  .btn-nuevo-doc {
+    background-color: rgb(71, 71, 71);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 1.8px solid rgb(191, 191, 191);
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+  }
+  
+  .btn-nuevo-doc:hover {
+    background-color: rgb(128, 128, 128);
+  }
+  
+  /* Galería de clasificaciones */
+  .grid-clasificaciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+    padding: 0 20px;
+  }
+  
+  /* Tarjetas de clasificaciones */
+  .clasificacion-card {
+    background: #555;
+    border: 1.5px solid #999;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+    box-shadow: 2px 2px 5px black;
+  }
+  
+  .clasificacion-card:hover {
+    background: #777;
+    transform: scale(1.05);
+  }
+  
+  /* Icono en la tarjeta */
+  .icono-clasificacion {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  
+  /* Nombre de la clasificación */
+  .nombre-clasificacion {
+    font-size: 18px;
+    font-weight: bold;
+    word-break: break-word;
+  }
+  
+  /* Contenedor de documentos */
+  .documentos-container {
+    padding: 20px;
+  }
+  
+  /* Título de documentos */
+  #titulo-clasificacion {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Lista de documentos */
+  #lista-documentos {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #lista-documentos li {
+    background: #444;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1.5px solid #888;
+    transition: background 0.3s;
+  }
+  
+  #lista-documentos li:hover {
+    background: #666;
+  }
+  
+  /* Botón de volver */
+  .btn-volver {
+    display: block;
+    margin: 30px auto 0 auto;
+    padding: 10px 20px;
+    background-color: rgb(71, 71, 71);
+    color: white;
+    border: 1.8px solid rgb(191, 191, 191);
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .btn-volver:hover {
+    background-color: rgb(128, 128, 128);
+  }
+  
+  /* Mensaje si no hay clasificaciones */
+  .mensaje-vacio {
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  .mensaje-vacio img {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+  
+  .mensaje-vacio p {
+    font-size: 18px;
+  }
+  
+  .mensaje-vacio .btn-primera {
+    background-color: rgb(71, 71, 71);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 1.8px solid rgb(191, 191, 191);
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 10px;
+  }
+  
+  .mensaje-vacio .btn-primera:hover {
+    background-color: rgb(128, 128, 128);
+  }
+  

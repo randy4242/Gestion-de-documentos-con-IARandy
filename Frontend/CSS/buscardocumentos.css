@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: gray;
+  }
+
+  h2{
+    color: white;
+  }
+
+  div .resumen {
+    color: rgb(255, 255, 255);
+  }
+  
+  .contenedor-busqueda {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgb(67, 67, 67);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  }
+  
+  .filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .filtros input, .filtros select, .filtros button {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+  
+  .filtros button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .filtros .btn-limpiar {
+    background-color: #dc3545;
+  }
+  
+  .filtros button:hover {
+    opacity: 0.9;
+  }
+  
+  #lista-documentos {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #lista-documentos li {
+    padding: 10px;
+    background: #e9f5ff;
+    margin-bottom: 10px;
+    border-left: 5px solid #007bff;
+    border-radius: 6px;
+  }
+
+  .resumen {
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  #cantidad-resultados {
+    color: white;
+  }
+  
+  /* NUEVAS */
+  .palabras-clave-container {
+    margin: 8px 0;
+    background-color: #4a4a4a; /* Fondo gris oscuro para contraste */
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.palabras-clave-container small {
+    color: #e0e0e0 !important; /* Color gris claro para el texto */
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+.palabras-clave-container strong {
+    color: #ffffff !important; /* Color blanco para el título */
+}
+
+.palabras-visibles, .palabras-ocultas {
+    color: #a8d8ff !important; /* Color azul claro para mejor legibilidad */
+}
+
+.btn-ver-mas {
+    background: none !important;
+    border: none;
+    color: #4fc3f7 !important; /* Azul más brillante para el botón */
+    cursor: pointer;
+    padding: 0 4px;
+    text-decoration: underline;
+    font-size: 0.85em;
+    margin-left: 5px;
+}
+
+.btn-ver-mas:hover {
+    color: #81d4fa !important; /* Azul más claro al pasar el mouse */
+    text-decoration: none;
+}
+
+/* Asegurar que los elementos dentro del li tengan buen contraste */
+#lista-documentos li {
+    background: #3a3a3a; /* Fondo más oscuro para los items */
+    color: #ffffff; /* Texto blanco general */
+    border-left: 5px solid #007bff;
+}
+
+#lista-documentos li a {
+    color: #4fc3f7; /* Color azul para los enlaces */
+    text-decoration: none;
+}
+
+#lista-documentos li a:hover {
+    text-decoration: underline;
+}

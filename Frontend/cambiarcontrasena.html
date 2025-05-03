@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restablecer Contraseña</title>
+    <link rel="stylesheet" href="CSS/cambiarcontrasena.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Restablecer Contraseña</h2>
+        <form id="change-password-form">
+            <label for="new-password">Nueva Contraseña</label>
+            <input type="password" id="new-password" required placeholder="Ingresa tu nueva contraseña" />
+            
+            <label for="confirm-password">Confirmar Contraseña</label>
+            <input type="password" id="confirm-password" required placeholder="Confirma tu nueva contraseña" />
+            
+            <button type="submit">Restablecer Contraseña</button>
+        </form>
+        <p id="mensaje"></p> <!-- Aquí aparecerán los mensajes de estado -->
+    </div>
+    <script type="module" src="js/cambiarcontrasena.js"></script>
+</body>
+</html>

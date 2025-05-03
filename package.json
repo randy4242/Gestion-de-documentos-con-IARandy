@@ -1,0 +1,30 @@
+{
+  "name": "digitalizacion_de_archivos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leximargimenez23/Digitalizaci-n-de-archivos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leximargimenez23/Digitalizaci-n-de-archivos/issues"
+  },
+  "homepage": "https://github.com/leximargimenez23/Digitalizaci-n-de-archivos#readme",
+  "description": "",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mammoth": "^1.9.0",
+    "pdf-parse": "^1.1.1",
+    "pdfjs-dist": "^5.1.91",
+    "tesseract.js": "^6.0.0"
+  }
+}

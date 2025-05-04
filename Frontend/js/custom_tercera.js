@@ -64,13 +64,15 @@ async function guardarClasificacion() {
         return;
     }
 
-    const { error: insertError } = await supabase
+    const { data, error: insertError } = await supabase
         .from("clasificaciones")
         .insert([{
             nombre: nombreInput,
             icono: iconoSeleccionado.textContent,
             user_id: user.id
-        }]);
+        }])
+        .select()
+        .single(); // esto te devuelve la fila recién insertada
 
     if (insertError) {
         console.error("❌ Error al guardar clasificación:", insertError.message);
@@ -78,10 +80,15 @@ async function guardarClasificacion() {
         return;
     }
 
+    // Establecer como clasificación activa inmediatamente
+    clasificacionActiva = data.id;
+    document.getElementById("clasificacion-activa").textContent = `Clasificación activa: ${data.nombre}`;
+
     alert("✅ Clasificación creada correctamente.");
     cerrarModal("modalClasificacion");
     await cargarClasificaciones();
 }
+
 
 // Manejadores de modales
 function abrirModal(id) {

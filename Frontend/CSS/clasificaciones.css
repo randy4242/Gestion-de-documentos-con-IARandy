@@ -6,6 +6,10 @@ body {
     margin: 0;
     padding: 0;
   }
+
+  a{
+    color: aquamarine;
+  }
   
   /* Contenedor principal */
   .clasificaciones-container {
@@ -27,7 +31,8 @@ body {
   }
   
   .btn-nuevo-doc {
-    background-color: rgb(71, 71, 71);
+    display: inline-block;
+    background-color: rgb(116, 196, 112);
     color: white;
     padding: 10px 20px;
     text-decoration: none;
@@ -35,10 +40,14 @@ body {
     border-radius: 8px;
     transition: background-color 0.3s;
     font-size: 16px;
+    margin: 0 auto; /* clave para centrar */
+    display: block;
+    text-align: center;
   }
   
+  
   .btn-nuevo-doc:hover {
-    background-color: rgb(128, 128, 128);
+    background-color: rgb(65, 115, 76);
   }
   
   /* Galería de clasificaciones */

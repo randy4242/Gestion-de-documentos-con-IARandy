@@ -36,7 +36,7 @@ body {
     color: white;
     padding: 10px 20px;
     text-decoration: none;
-    border: 1.8px solid rgb(191, 191, 191);
+    border: 1.8px solid rgb(255, 255, 255);
     border-radius: 8px;
     transition: background-color 0.3s;
     font-size: 16px;
@@ -47,7 +47,7 @@ body {
   
   
   .btn-nuevo-doc:hover {
-    background-color: rgb(65, 115, 76);
+    background-color: rgb(80, 140, 93);
   }
   
   /* Galería de clasificaciones */

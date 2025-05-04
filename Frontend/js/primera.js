@@ -158,7 +158,9 @@ async function subirArchivo() {
         .replace(/\s+/g, "_");
 
     const filePath = `uploads/${safeFileName}`;
-    const fileUrl = `https://bkdnidzlvszxokasrmol.supabase.co/storage/v1/object/public/documentos/${encodeURIComponent(filePath)}`;
+    const { data: publicUrlData } = supabase.storage.from("documentos").getPublicUrl(filePath);
+const fileUrl = publicUrlData.publicUrl;
+
 
     // ☁️ Subir a Supabase Storage
     const { error: uploadError } = await supabase.storage.from("documentos").upload(filePath, file, { upsert: true });

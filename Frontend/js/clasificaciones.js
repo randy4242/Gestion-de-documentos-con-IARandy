@@ -53,7 +53,7 @@ async function mostrarDocumentosDeClasificacion(clasificacionId, nombreClasifica
   tituloClasificacion.innerHTML = `Documentos en <span id="nombre-clasificacion-activa">${nombreClasificacion}</span>`;
 
   const { data, error } = await supabase
-    .from('documentos')
+    .from('documentos_meta')
     .select('*')
     .eq('clasificacion_id', clasificacionId)
     .order('created_at', { ascending: false });

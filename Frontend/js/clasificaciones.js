@@ -68,10 +68,11 @@ async function mostrarDocumentosDeClasificacion(clasificacionId, nombreClasifica
     return;
   }
 
+  //Se coloca el nombre del documento, todavia falta por implementar el formato
   data.forEach(doc => {
     const li = document.createElement('li');
     li.innerHTML = `
-      <strong>${doc.nombre}</strong> (${doc.formato}) 
+      <strong>${doc.nombre}</strong> (${doc.formato})  
       - <a href="${doc.url}" target="_blank">Ver Documento 📄</a>
     `;
     listaDocumentos.appendChild(li);

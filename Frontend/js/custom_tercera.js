@@ -64,7 +64,6 @@ async function guardarClasificacion() {
         return;
     }
 
-    // Verificar si ya existe una clasificación con el mismo nombre para este usuario
     const { data: existentes, error: errorExistente } = await supabase
         .from("clasificaciones")
         .select("id")
@@ -142,13 +141,11 @@ document.getElementById("fileInput").addEventListener("change", function () {
     const formatoInput = document.getElementById("file-format");
 
     if (archivo) {
-        // Nombre sin extensión
         const nombreSinExtension = archivo.name.replace(/\.[^/.]+$/, "");
         inputNombre.value = nombreSinExtension;
-    
-        // Detectar tipo de formato con múltiples extensiones comunes
+
         const extension = archivo.name.split('.').pop().toLowerCase();
-        
+
         const tiposFormato = {
             pdf: "PDF",
             doc: "DOC",
@@ -168,14 +165,15 @@ document.getElementById("fileInput").addEventListener("change", function () {
             odt: "ODT",
             rtf: "RTF"
         };
-    
+
         const formatoDetectado = tiposFormato[extension] || "Desconocido";
         formatoInput.value = formatoDetectado;
 
-        // Mostrar texto legible para el usuario
+        // Mostrar ícono + texto
         const tipoDocumentoTexto = document.getElementById("tipo-documento");
-        tipoDocumentoTexto.textContent = `Tipo de documento: ${formatoDetectado}`;
-        tipoDocumentoTexto.style.display = "block";
+        tipoDocumentoTexto.innerHTML = `
+            <img src="imagenes/${extension}.png" alt="${formatoDetectado}" style="width: 24px; vertical-align: middle; margin-right: 5px;">
+            ${formatoDetectado}
+        `;
     }
-    
 });

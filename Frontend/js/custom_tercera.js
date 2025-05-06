@@ -69,7 +69,7 @@ async function guardarClasificacion() {
         .from("clasificaciones")
         .select("id")
         .eq("user_id", user.id)
-        .ilike("nombre", nombreInput); // ilike para que no sea sensible a mayúsculas/minúsculas
+        .ilike("nombre", nombreInput);
 
     if (errorExistente) {
         console.error("❌ Error al verificar clasificación existente:", errorExistente.message);
@@ -90,7 +90,7 @@ async function guardarClasificacion() {
             user_id: user.id
         }])
         .select()
-        .single(); // esto te devuelve la fila recién insertada
+        .single();
 
     if (insertError) {
         console.error("❌ Error al guardar clasificación:", insertError.message);
@@ -98,7 +98,6 @@ async function guardarClasificacion() {
         return;
     }
 
-    // Establecer como clasificación activa inmediatamente
     clasificacionActiva = data.id;
     document.getElementById("clasificacion-activa").innerHTML = `Clasificación activa: ${data.icono} ${data.nombre}`;
 
@@ -106,8 +105,6 @@ async function guardarClasificacion() {
     cerrarModal("modalClasificacion");
     await cargarClasificaciones();
 }
-
-
 
 // Manejadores de modales
 function abrirModal(id) {
@@ -138,15 +135,42 @@ document.querySelectorAll(".cerrar").forEach(btn => {
     });
 });
 
-// Actualizar automáticamente el campo #file-name con el nombre del archivo seleccionado (sin extensión)
+// Actualizar automáticamente nombre y formato al seleccionar archivo
 document.getElementById("fileInput").addEventListener("change", function () {
     const archivo = this.files[0];
     const inputNombre = document.getElementById("file-name");
+    const formatoInput = document.getElementById("file-format");
 
     if (archivo) {
-        // Eliminar la extensión del archivo
+        // Nombre sin extensión
         const nombreSinExtension = archivo.name.replace(/\.[^/.]+$/, "");
         inputNombre.value = nombreSinExtension;
+    
+        // Detectar tipo de formato con múltiples extensiones comunes
+        const extension = archivo.name.split('.').pop().toLowerCase();
+        
+        const tiposFormato = {
+            pdf: "PDF",
+            doc: "DOC",
+            docx: "DOCX",
+            txt: "TXT",
+            jpg: "JPG",
+            jpeg: "JPEG",
+            png: "PNG",
+            gif: "GIF",
+            bmp: "BMP",
+            webp: "WEBP",
+            xls: "XLS",
+            xlsx: "XLSX",
+            csv: "CSV",
+            ppt: "PPT",
+            pptx: "PPTX",
+            odt: "ODT",
+            rtf: "RTF"
+        };
+    
+        const formatoDetectado = tiposFormato[extension] || "Desconocido";
+        formatoInput.value = formatoDetectado;
     }
+    
 });
-

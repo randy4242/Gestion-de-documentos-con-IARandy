@@ -137,3 +137,16 @@ document.querySelectorAll(".cerrar").forEach(btn => {
         btn.parentElement.parentElement.style.display = "none";
     });
 });
+
+// Actualizar automáticamente el campo #file-name con el nombre del archivo seleccionado (sin extensión)
+document.getElementById("fileInput").addEventListener("change", function () {
+    const archivo = this.files[0];
+    const inputNombre = document.getElementById("file-name");
+
+    if (archivo) {
+        // Eliminar la extensión del archivo
+        const nombreSinExtension = archivo.name.replace(/\.[^/.]+$/, "");
+        inputNombre.value = nombreSinExtension;
+    }
+});
+

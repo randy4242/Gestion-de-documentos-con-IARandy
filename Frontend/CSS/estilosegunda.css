@@ -273,6 +273,14 @@ input, select {
   }
   
 
+  #tipo-documento {
+    margin-top: 10px;
+    text-align: center;
+    color: rgb(0, 0, 0);        /* Mejor contraste */
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
 .clasificacion-item:hover {
     background-color: #e0e0e0;
     transform: translateX(5px);

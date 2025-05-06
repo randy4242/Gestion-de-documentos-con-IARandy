@@ -171,6 +171,11 @@ document.getElementById("fileInput").addEventListener("change", function () {
     
         const formatoDetectado = tiposFormato[extension] || "Desconocido";
         formatoInput.value = formatoDetectado;
+
+        // Mostrar texto legible para el usuario
+        const tipoDocumentoTexto = document.getElementById("tipo-documento");
+        tipoDocumentoTexto.textContent = `Tipo de documento: ${formatoDetectado}`;
+        tipoDocumentoTexto.style.display = "block";
     }
     
 });

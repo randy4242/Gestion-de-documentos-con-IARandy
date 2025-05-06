@@ -34,7 +34,14 @@
       <div class="preview-box">
         <p class="preview-placeholder">Aquí se cargará la vista previa del documento.</p>
       </div>
+
+      <!-- Oculto: Aqui se muestra el tipo de documento -->
+    <input type="text" id="file-format" readonly style="display: none;">
+    <!-- Visible: mensaje para el usuario -->
+    <p id="tipo-documento"></p>
+
     </div>
+
 
     <!-- Formulario -->
     <div class="form-section">
@@ -44,8 +51,8 @@
       <label for="file-name">Nombre del archivo</label>
       <input type="text" id="file-name" placeholder="Escribe el nombre">
 
-      <label for="file-format">Formato del documento</label>
-      <input type="text" id="file-format" readonly placeholder="Tipo de documento">
+      <!-- <label for="file-format">Formato del documento</label>
+      <input type="text" id="file-format" readonly placeholder="Tipo de documento"> -->
 
 
       <!-- Botones -->

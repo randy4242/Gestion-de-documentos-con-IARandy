@@ -41,7 +41,7 @@ async function cargarClasificaciones() {
         boton.classList.add("boton-clasificacion");
         boton.addEventListener("click", () => {
             clasificacionActiva = clasif.id;
-            document.getElementById("clasificacion-activa").textContent = `Clasificación activa: ${clasif.nombre}`;
+            document.getElementById("clasificacion-activa").innerHTML = `Clasificación activa: ${clasif.icono} ${clasif.nombre}`;
             cerrarModal("modalAgregarClasificacion");
         });
         contenedor.appendChild(boton);
@@ -64,6 +64,24 @@ async function guardarClasificacion() {
         return;
     }
 
+    // Verificar si ya existe una clasificación con el mismo nombre para este usuario
+    const { data: existentes, error: errorExistente } = await supabase
+        .from("clasificaciones")
+        .select("id")
+        .eq("user_id", user.id)
+        .ilike("nombre", nombreInput); // ilike para que no sea sensible a mayúsculas/minúsculas
+
+    if (errorExistente) {
+        console.error("❌ Error al verificar clasificación existente:", errorExistente.message);
+        alert("Error al verificar clasificaciones existentes.");
+        return;
+    }
+
+    if (existentes.length > 0) {
+        alert("Ya tienes una clasificación con ese nombre.");
+        return;
+    }
+
     const { data, error: insertError } = await supabase
         .from("clasificaciones")
         .insert([{
@@ -82,12 +100,13 @@ async function guardarClasificacion() {
 
     // Establecer como clasificación activa inmediatamente
     clasificacionActiva = data.id;
-    document.getElementById("clasificacion-activa").textContent = `Clasificación activa: ${data.nombre}`;
+    document.getElementById("clasificacion-activa").innerHTML = `Clasificación activa: ${data.icono} ${data.nombre}`;
 
     alert("✅ Clasificación creada correctamente.");
     cerrarModal("modalClasificacion");
     await cargarClasificaciones();
 }
+
 
 
 // Manejadores de modales

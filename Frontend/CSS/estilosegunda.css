@@ -244,6 +244,35 @@ input, select {
     gap: 10px;
 }
 
+#contenedor-clasificaciones {
+    max-height: 200px; /* Altura límite visible */
+    overflow-y: auto;  /* Scroll vertical si hay muchas */
+    margin-top: 10px;
+    padding-right: 10px; /* Para que el scroll no tape texto */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+    scrollbar-width: thin; /* Firefox */
+  }
+  
+  /* Estilo personalizado del scrollbar en Chrome */
+  #contenedor-clasificaciones::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  #contenedor-clasificaciones::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border-radius: 4px;
+  }
+  
+  #contenedor-clasificaciones::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+
 .clasificacion-item:hover {
     background-color: #e0e0e0;
     transform: translateX(5px);

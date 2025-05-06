@@ -154,16 +154,11 @@ document.getElementById("fileInput").addEventListener("change", function () {
             jpg: "JPG",
             jpeg: "JPEG",
             png: "PNG",
-            gif: "GIF",
-            bmp: "BMP",
-            webp: "WEBP",
             xls: "XLS",
             xlsx: "XLSX",
             csv: "CSV",
             ppt: "PPT",
             pptx: "PPTX",
-            odt: "ODT",
-            rtf: "RTF"
         };
 
         const formatoDetectado = tiposFormato[extension] || "Desconocido";
@@ -172,7 +167,7 @@ document.getElementById("fileInput").addEventListener("change", function () {
         // Mostrar ícono + texto
         const tipoDocumentoTexto = document.getElementById("tipo-documento");
         tipoDocumentoTexto.innerHTML = `
-            <img src="imagenes/${extension}.png" alt="${formatoDetectado}" style="width: 24px; vertical-align: middle; margin-right: 5px;">
+            <img src="imagenes/${tiposFormato[extension] ? extension : 'generico'}.png" alt="${formatoDetectado}" style="width: 24px; vertical-align: middle; margin-right: 5px;">
             ${formatoDetectado}
         `;
     }
